@@ -1,0 +1,116 @@
+.cart-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 20rem;
+    overflow: scroll;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: black !important;
+    text-align: center;
+}
+
+.actions {
+    text-align: right;
+    border-bottom: 1px solid black;
+    text-align: center;
+
+}
+
+.actions button {
+    border: none;
+    outline: none;
+    padding: 1rem 0rem;
+    background: white;
+
+
+}
+
+
+
+.box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+    position: fixed;
+    top: 30vh;
+    left: 5%;
+    width: 90%;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(247, 212, 212, 0.25);
+    z-index: 30;
+    animation: slide-down 300ms ease-out forwards;
+}
+
+.msgbox {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0.2rem 3rem;
+    text-align: center;
+}
+
+.msgbox>p {
+    font-size: x-small;
+
+}
+
+.line {
+    width: 250px;
+    height: 1px;
+
+    /* Neutral / 400 */
+
+    background: #A0ABBB;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 1px;
+}
+
+@media (min-width: 768px) {
+    .modal {
+        width: 25rem;
+        left: calc(59% - 20rem);
+    }
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-3rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

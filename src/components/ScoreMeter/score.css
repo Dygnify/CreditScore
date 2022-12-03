@@ -1,0 +1,74 @@
+.margin {
+    margin: 25px;
+}
+
+.semi-donut-model-2 {
+    width: 300px;
+    height: 150px;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 150px 150px 0 0;
+    overflow: hidden;
+    color: var(--fill);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.semi-donut-model-2:before,
+.semi-donut-model-2:after {
+    content: '';
+    width: 300px;
+    height: 150px;
+    border: 50px solid var(--fill);
+    border-top: none;
+    position: absolute;
+    transform-origin: 50% 0% 0;
+    border-radius: 0 0 300px 300px;
+    box-sizing: border-box;
+    left: 0;
+    top: 100%;
+}
+
+.semi-donut-model-2:before {
+    border-color: rgba(0, 0, 0, .15);
+    transform: rotate(180deg);
+}
+
+.semi-donut-model-2:after {
+    z-index: 3;
+    animation: 1s fillGraphAnimation ease-in;
+    transform: rotate(calc(1deg * (var(--percentage) * 1.8)));
+}
+
+.semi-donut-model-2:hover :after {
+
+    opacity: .8;
+    cursor: pointer;
+
+}
+
+
+@keyframes fillAnimation {
+    0% {
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        transform: rotate(135deg);
+    }
+}
+
+@keyframes fillGraphAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+}
