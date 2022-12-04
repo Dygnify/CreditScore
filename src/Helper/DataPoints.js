@@ -66,6 +66,7 @@ async function getAllTransactions(address) {
 			transactionDetails.res &&
 			transactionDetails.res.result.length > 0
 		) {
+			console.log(transactionDetails.res.result);
 			return transactionDetails.res.result;
 		}
 	} catch (error) {
@@ -119,6 +120,7 @@ async function getAllTokenTransactions(address) {
 			transactionDetails.res &&
 			transactionDetails.res.result.length > 0
 		) {
+			console.log(transactionDetails.res.result);
 			return transactionDetails.res.result;
 		}
 	} catch (error) {
@@ -194,6 +196,7 @@ async function getAllTokenBalances(address) {
 			let goodTokenAmt = 0;
 			let totalTokenAmt = 0;
 			let memeTokenCount = 0;
+			console.log(transactionDetails.res.data.items);
 			transactionDetails.res.data.items.forEach((trx) => {
 				let found = topToken.find(
 					(symbol) =>

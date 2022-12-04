@@ -2,7 +2,7 @@ export const ethTransactions = (address) => {
 	if (!address) {
 		return null;
 	}
-	console.log("Fetching transactions for address - ", address);
+	console.log("Fetching all transactions for address");
 	var api_options = {
 		method: "get",
 		url: `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=asc&apikey=${process.env.REACT_APP_ETHERSCAN_APIKEY}`,
@@ -15,7 +15,7 @@ export const ethTokenTransactions = (address) => {
 	if (!address) {
 		return null;
 	}
-	console.log("Fetching transactions for address - ", address);
+	console.log("Fetching token transactions for address");
 	var api_options = {
 		method: "get",
 		url: `https://api.etherscan.io/api?module=account&action=tokentx&address=${address}&startblock=0&endblock=99999999&sort=asc&apikey=${process.env.REACT_APP_ETHERSCAN_APIKEY}`,
